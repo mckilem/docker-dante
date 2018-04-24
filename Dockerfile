@@ -35,6 +35,10 @@ RUN set -x \
 # Default configuration
 COPY sockd.conf /etc/
 
+# TODO: Replace 'john' and 'MyPassword' by any username/password you want.
+RUN printf 'Password\nPassword\n' | adduser loopa
+RUN printf 'Password\nPassword\n' | adduser poopa
+
 EXPOSE 1080
 
 ENTRYPOINT ["dumb-init"]
